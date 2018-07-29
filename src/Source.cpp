@@ -1,6 +1,7 @@
 #include "Lib.h"
 #include "Menu.h"
 #include "CGAME.h"
+#include "Header.h"
 
 CGAME cg;
 
@@ -15,7 +16,11 @@ void update_position()
 				cg.updateLights();
 			if (count_time == 3000)
 				count_time = 0;
-			else count_time += 50;
+			else
+			{
+				count_time += 50;
+				cg.updateDinausorPos();
+			}
 			if (!cg.check_people_is_dead())
 			{
 				cg.updatePeoplePos();

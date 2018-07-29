@@ -4,7 +4,7 @@
 class CLIGHT
 {
 private:
-	char light = 219;
+	char light = 220;
 	bool state; //red is false, green is true.
 	int green_color;
 	int red_color;

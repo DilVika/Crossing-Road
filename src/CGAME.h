@@ -4,6 +4,7 @@
 #include "lib.h"
 #include "CPEOPLE.h"
 #include "CLIGHT.h"
+#include "CANIMAL.h"
 
 class CGAME
 {
@@ -15,9 +16,10 @@ private:
 
 	CPEOPLE cn;
 	CLIGHT lights;
+	vector<CDINAUSOR> dino;
 
 public:
-	CGAME() {};
+	CGAME();
 	~CGAME() {};
 
 	bool get_data(bool check);
@@ -30,6 +32,7 @@ public:
 
 	void updatePeoplePos();
 	void updateLights();
+	void updateDinausorPos();
 	
 	bool congrats();
 

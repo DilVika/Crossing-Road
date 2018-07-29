@@ -1,4 +1,13 @@
-#include "CGAME.h"
+﻿#include "CGAME.h"
+
+CGAME::CGAME()
+{
+	dino.resize(4);
+	dino[0] = CDINAUSOR(4, 8);
+	dino[1] = CDINAUSOR(16, 8);
+	dino[2] = CDINAUSOR(28, 8);
+	dino[3] = CDINAUSOR(40, 8);
+}
 
 bool CGAME::get_data(bool check)
 {
@@ -228,6 +237,31 @@ void CGAME::updatePeoplePos()
 void CGAME::updateLights()
 {
 	lights.update_light();
+}
+
+void CGAME::updateDinausorPos()
+{
+	// xóa con vật cũ
+	for (int i = 0; i < 4; ++i)
+	{
+		dino[i].Delete();
+	}
+	// update vị trí mới sau khi xóa
+	for (int i = 0; i < 4; ++i)
+	{
+		dino[i].UpdatePos(1);
+	}
+	// kiểm tra va chạm 
+	//C1.CheckImp(CN);
+	//C2.CheckImp(CN);
+	//C3.CheckImp(CN);
+	//C4.CheckImp(CN);
+
+	//Sleep(50);
+	for (int i = 0; i < 4; ++i)
+	{
+		dino[i].Draw();
+	}
 }
 
 bool CGAME::congrats()
